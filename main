@@ -1,0 +1,14 @@
+#include "./libft/libft.h"
+#include <stdio.h>
+
+int main()
+{
+	char **line;
+
+	while (get_next_line(0, line))
+		{
+			printf("\n PRINTING MF %s \n", *line);
+			free((*line));
+		}
+	return (0);
+}
