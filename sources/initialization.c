@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   initialization.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ftrujill <ftrujill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/09 11:59:29 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/06/10 10:39:01 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/07/12 16:42:39 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
+#include "../libft/libft.h"
 #include "push_swap.h"
 
 int     check_stack(int argc, char **argv)

@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ftrujill <ftrujill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/08 11:22:41 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/06/10 10:38:01 by ftrujill         ###   ########.fr       */
+/*   Created: 2019/07/12 16:47:17 by ftrujill          #+#    #+#             */
+/*   Updated: 2019/07/12 16:48:45 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
+#include "../libft/libft.h"
 #include "push_swap.h"
 
 int     is_sorted(t_stack *a, t_stack *b, int argc)

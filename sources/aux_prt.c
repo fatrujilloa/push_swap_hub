@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   aux_prt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ftrujill <ftrujill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/08 19:10:55 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/06/10 10:35:31 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/07/12 16:26:30 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./libft/libft.h"
+#include "../libft/libft.h"
 #include "push_swap.h"
 
 void    free_stacks(t_stack *a, t_stack *b)
