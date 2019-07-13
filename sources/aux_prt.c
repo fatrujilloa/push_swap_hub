@@ -5,46 +5,38 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftrujill <ftrujill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/06/08 19:10:55 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/07/12 16:26:30 by ftrujill         ###   ########.fr       */
+/*   Created: 2019/07/13 18:29:37 by ftrujill          #+#    #+#             */
+/*   Updated: 2019/07/13 18:30:04 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../libft/libft.h"
 #include "push_swap.h"
 
-void    free_stacks(t_stack *a, t_stack *b)
+int		prt_sorted(t_stack *a, t_stack *b)
 {
-    free(a->stack);
-    free(b->stack);
-    free(a);
-    free(b);
+	free_stacks(a, b);
+	write(1, "OK\n", 3);
+	return (0);
 }
 
-int     prt_sorted(t_stack *a, t_stack *b)
+int		prt_not_sorted(t_stack *a, t_stack *b)
 {
-    free_stacks(a, b);
-    write(1, "OK\n", 3);
-    return (0);
+	free_stacks(a, b);
+	write(1, "KO\n", 3);
+	return (0);
 }
 
-int    prt_not_sorted(t_stack *a, t_stack *b)
+int		prt_error_but_free(t_stack *a, t_stack *b, char *inst)
 {
-    free_stacks(a, b);
-    write(1, "KO\n", 3);
-    return (0);
+	free(inst);
+	free_stacks(a, b);
+	write(1, "Error\n", 6);
+	return (0);
 }
 
-int    prt_error_but_free(t_stack *a, t_stack *b, char *inst)
+int		prt_error(void)
 {
-    free(inst);
-    free_stacks(a, b);
-    write(1, "Error\n", 6);
-    return (0);
-}
-
-int    prt_error(void)
-{
-    write(1, "Error\n", 6);
-    return (0);
+	write(1, "Error\n", 6);
+	return (0);
 }
