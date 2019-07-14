@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   aux_prt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftrujill <ftrujill@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 18:29:37 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/07/13 18:30:04 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/07/14 01:55:05 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,8 @@ int		prt_not_sorted(t_stack *a, t_stack *b)
 	return (0);
 }
 
-int		prt_error_but_free(t_stack *a, t_stack *b, char *inst)
+int		prt_error_but_free(t_stack *a, t_stack *b)
 {
-	free(inst);
 	free_stacks(a, b);
 	write(1, "Error\n", 6);
 	return (0);
@@ -40,3 +39,4 @@ int		prt_error(void)
 	write(1, "Error\n", 6);
 	return (0);
 }
+

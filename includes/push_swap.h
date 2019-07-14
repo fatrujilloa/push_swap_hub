@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftrujill <ftrujill@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 19:35:16 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/07/13 19:36:14 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/07/14 01:55:16 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ void			free_stacks(t_stack *a, t_stack *b);
 */
 int				prt_sorted(t_stack *a, t_stack *b);
 int				prt_not_sorted(t_stack *a, t_stack *b);
-int				prt_error_but_free(t_stack *a, t_stack *b, char *inst);
+int				prt_error_but_free(t_stack *a, t_stack *b);
 int				prt_error(void);
 /*
 ** Visualization

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   basic_actions.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftrujill <ftrujill@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 18:30:29 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/07/13 18:30:53 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/07/13 21:35:54 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int		swap(t_stack *s)
 {
 	int t;
 
+	if (s->size <= 1)
+		return (1);
 	t = s->stack[0];
 	s->stack[0] = s->stack[1];
 	s->stack[1] = t;
@@ -28,6 +30,8 @@ int		rotate(t_stack *s)
 	int i;
 	int t;
 
+	if (s->size <= 1)
+		return (1);
 	i = -1;
 	t = s->stack[0];
 	while (++i < s->size - 1)
@@ -41,6 +45,8 @@ int		rev_rotate(t_stack *s)
 	int i;
 	int t;
 
+	if (s->size <= 1)
+		return (1);
 	i = s->size;
 	t = s->stack[s->size - 1];
 	while (--i > 0)

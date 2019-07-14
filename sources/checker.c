@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   checker.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftrujill <ftrujill@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 18:31:14 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/07/13 19:37:08 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/07/14 01:56:18 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,26 @@
 
 int		checker_continuation(int argc, t_stack *a, t_stack *b)
 {
-	char		*inst;
+	int		i;
+	int		r;
+	char	inst[4];
 
-	while (get_next_line(0, &inst))
+	r = 1;
+	while (r)
 	{
+		i = 0;
+		while (i < 4)
+			inst[i++] = 0;
+		i = 0;
+		while (i < 4 && (r = read(0, &inst[i], 1)) && inst[i] != '\n')
+			i++;
+		if (i == 0 && r == 0)
+			break ;
+		if (inst[i] != '\n')
+			return (prt_error_but_free(a, b));
+		inst[i] = 0;
 		if (!action_not_prt(a, b, inst))
-			return (prt_error_but_free(a, b, inst));
-		free(inst);
+			return (prt_error_but_free(a, b));
 	}
 	if (!is_sorted(a, b, argc))
 		return (prt_not_sorted(a, b));

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftrujill <ftrujill@student.42.fr>          +#+  +:+       +#+        */
+/*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 18:41:46 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/07/13 19:46:49 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/07/13 21:33:00 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ int		ps_continuation(int argc, t_stack *a, t_stack *b)
 	{
 		split(a, b);
 		merge(a, b);
-	prt_stacks(a, b);
 	}
 	free_stacks(a, b);
 	return (0);
