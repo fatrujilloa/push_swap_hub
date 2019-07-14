@@ -6,7 +6,7 @@
 /*   By: ftrujill <ftrujill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 18:41:46 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/07/14 13:29:12 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/07/14 17:40:22 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,12 +51,16 @@ int		main(int argc, char **argv)
 	}
 	else
 		tab = argv;
-	if (!check_stack(argc, tab)
-		|| !(a = (t_stack*)malloc(sizeof(t_stack)))
-		|| !(b = (t_stack*)malloc(sizeof(t_stack)))
-		|| !(a->stack = (int*)malloc(sizeof(int) * argc))
-		|| !(b->stack = (int*)malloc(sizeof(int) * argc)))
-		return (prt_error());
+    if (!check_stack(argc, tab))
+    {
+        tab == argv ? 0 : free_tab(tab, argc);
+        return (prt_error());
+    }
+    if(!(a = (t_stack*)malloc(sizeof(t_stack)))
+       || !(b = (t_stack*)malloc(sizeof(t_stack)))
+       || !(a->stack = (int*)malloc(sizeof(int) * argc))
+       || !(b->stack = (int*)malloc(sizeof(int) * argc)))
+        return (prt_error());
 	init_stacks(argc, tab, a, b);
 	tab == argv ? 0 : free_tab(tab, argc);
 	return (ps_continuation(argc, a, b));
