@@ -6,7 +6,7 @@
 /*   By: ftrujill <ftrujill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 18:42:50 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/07/13 18:43:24 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/07/14 10:56:34 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 int		ns(t_stack *s, int x)
 {
+	if (s->size <= 1)
+		return (0);
 	if (x == 0)
 		return (s->stack[0] > s->stack[1] ? 1 : 0);
 	return (s->stack[0] < s->stack[1] ? 1 : 0);

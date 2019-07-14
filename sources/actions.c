@@ -6,7 +6,7 @@
 /*   By: ftrujill <ftrujill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 18:27:32 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/07/13 18:27:58 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/07/14 12:30:15 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,27 +15,27 @@
 
 int		action(t_stack *a, t_stack *b, char *inst)
 {
-	if (!ft_strcmp(inst, "sa"))
+	if (!ft_strcmp(inst, "sa") && a->size > 1)
 		return (swap(a) && ft_printf("%s\n", inst));
-	else if (!ft_strcmp(inst, "sb"))
+	else if (!ft_strcmp(inst, "sb") && b->size > 1)
 		return (swap(b) && ft_printf("%s\n", inst));
-	else if (!ft_strcmp(inst, "ss"))
+	else if (!ft_strcmp(inst, "ss") && (a->size > 1 || b->size > 1))
 		return (swap(a) && swap(b) && ft_printf("%s\n", inst));
-	else if (!ft_strcmp(inst, "pa"))
+	else if (!ft_strcmp(inst, "pa") && b->size != 0)
 		return (push(a, b) && ft_printf("%s\n", inst));
-	else if (!ft_strcmp(inst, "pb"))
+	else if (!ft_strcmp(inst, "pb") && a->size != 0)
 		return (push(b, a) && ft_printf("%s\n", inst));
-	else if (!ft_strcmp(inst, "ra"))
+	else if (!ft_strcmp(inst, "ra") && a->size > 1)
 		return (rotate(a) && ft_printf("%s\n", inst));
-	else if (!ft_strcmp(inst, "rb"))
+	else if (!ft_strcmp(inst, "rb") && b->size > 1)
 		return (rotate(b) && ft_printf("%s\n", inst));
-	else if (!ft_strcmp(inst, "rr"))
+	else if (!ft_strcmp(inst, "rr") && (a->size > 1 || b->size > 1))
 		return (rotate(a) && rotate(b) && ft_printf("%s\n", inst));
-	else if (!ft_strcmp(inst, "rra"))
+	else if (!ft_strcmp(inst, "rra") && a->size > 1)
 		return (rev_rotate(a) && ft_printf("%s\n", inst));
-	else if (!ft_strcmp(inst, "rrb"))
+	else if (!ft_strcmp(inst, "rrb") && b->size > 1)
 		return (rev_rotate(b) && ft_printf("%s\n", inst));
-	else if (!ft_strcmp(inst, "rrr"))
+	else if (!ft_strcmp(inst, "rrr") && (a->size > 1 || b->size > 1))
 		return (rev_rotate(a) && rev_rotate(b) && ft_printf("%s\n", inst));
 	else
 		return (0);

@@ -6,7 +6,7 @@
 /*   By: ftrujill <ftrujill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 18:33:45 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/07/13 18:40:49 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/07/14 13:19:40 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,10 +60,10 @@ int		small_list_2(int argc, t_stack *a, t_stack *b)
 		merge(a, b);
 	else
 	{
-		a->stack[2] < a->stack[1] && a->stack[2] < a->stack[0] ?
-			action(a, b, "rra") : 0;
-		ns(a, 0) ? action(a, b, "sa") : 0;
-		action(a, b, "pb") && action(a, b, "sa") && action(a, b, "pa");
+		if (a->stack[2] < a->stack[1] && a->stack[2] < a->stack[0])
+			action(a, b, "rra");
+		else if (a->stack[2] < a->stack[1])
+			action(a, b, "pb") && action(a, b, "sa") && action(a, b, "pa");
 		merge(a, b);
 	}
 	free_stacks(a, b);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftrujill <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ftrujill <ftrujill@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/07/13 18:41:46 by ftrujill          #+#    #+#             */
-/*   Updated: 2019/07/13 21:33:00 by ftrujill         ###   ########.fr       */
+/*   Updated: 2019/07/14 13:29:12 by ftrujill         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ int		main(int argc, char **argv)
 	if (argc == 2)
 	{
 		if (!(tab = ft_strsplit_mod(argv[1], ' ')))
-			return (-1);
+			return (prt_error());
 		argc = 1;
 		while (tab[argc])
 			argc++;
